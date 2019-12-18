@@ -6,7 +6,7 @@ const mongoose = require ('mongoose');
 // });
 
 
-mongoose.connect('mongodb+srv://truongnguyen5395:truong1995@cluster0-urh8c.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb+srv://test:truong1995@cluster0-ncaak.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true }, (err) => {
     if (!err) { console.log('MongoDB connection Success.') }
     else { console.log('Error in DB Connection : ' + err) }
 });
