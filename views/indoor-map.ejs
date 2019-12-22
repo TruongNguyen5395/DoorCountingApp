@@ -1279,7 +1279,7 @@
             let A3 = data.a3;
 
             let tid = A1;
-            let xPosition = -A2;
+            let xPosition = A2;
             let yPosition = A3;
 
             console.log(xPosition + '  ' + yPosition);
@@ -1309,7 +1309,7 @@
               ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
               for (count = 0; count < tid.length; count++) {
-                drawBall(xPosition[count], yPosition[count]);
+                drawBall(-xPosition[count], yPosition[count]);
 
 
               }
