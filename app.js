@@ -100,7 +100,7 @@ function mqtt_messsageReceiv(topic, message, packet) {
   var dataresult = JSON.parse("[" + json1 + "]");
 
   myId = dataresult[0];
-  myX = -dataresult[1];
+  myX = dataresult[1];
   myY = dataresult[2];
 
   // for (count = 0; count < myId.length; count++) {
