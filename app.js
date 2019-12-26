@@ -123,7 +123,7 @@ function mqtt_messsageReceiv(topic, message, packet) {
       } else {
         arr1[value] = 1
       }
-    } else if (y > 1 && y < 2) {
+    } else if (y > 1.5 && y < 2.5) {
       arr2[value] = 1;
     } else if (y >= 2.5) {
       if (arr2[value] === 1 && arr1[value] === 1) {
