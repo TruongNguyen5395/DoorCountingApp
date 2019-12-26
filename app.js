@@ -83,7 +83,7 @@ var arr1 = new Array(20).fill(0);
 var arr2 = new Array(20).fill(0);
 var arr3 = new Array(20).fill(0);
 
-let countIn  = 0;
+let countIn = 0;
 let countOut = 0;
 let peoLeft = 0;
 
@@ -100,46 +100,46 @@ function mqtt_messsageReceiv(topic, message, packet) {
   var dataresult = JSON.parse("[" + json1 + "]");
 
   myId = dataresult[0];
-  myX = -dataresult[1];
+  myX = dataresult[1];
   myY = dataresult[2];
 
   // for (count = 0; count < myId.length; count++) {
   //   if (myY[count] <= 1) {
   //     Temp.update({tid : tid[count],})
   //     }
-    
-  myId.map((value,index)=>{
- 
+
+  myId.map((value, index) => {
+
     // arr[value] = myY[index];
     let y = myY[index]
-    if(y<=1){
-      if(arr2[value]===1 && arr3[value]===1){
-        countOut++ ;
-        arr2[value]=0;
-        arr3[value]=0;
-      }else if(arr2[value]===1 && arr3[value]===0){
-        arr2[value]=0;
-        arr1[value] =0;
-      }else{
-        arr1[value] =1
+    if (y <= 1.5) {
+      if (arr2[value] === 1 && arr3[value] === 1) {
+        countOut++;
+        arr2[value] = 0;
+        arr3[value] = 0;
+      } else if (arr2[value] === 1 && arr3[value] === 0) {
+        arr2[value] = 0;
+        arr1[value] = 0;
+      } else {
+        arr1[value] = 1
       }
-    }else if(y >1 && y< 2){
+    } else if (y > 1 && y < 2) {
       arr2[value] = 1;
-    }else if(y >=2){
-      if(arr2[value]===1 && arr1[value]===1){
+    } else if (y >= 2.5) {
+      if (arr2[value] === 1 && arr1[value] === 1) {
         countIn++;
-        arr2[value]=0;
-        arr1[value] =0;
-      }else if(arr2[value]===1 && arr1[value]===0){
-        arr2[value]=0;
-        arr3[value] =0;
-      }else{
-        arr3[value] =1;
+        arr2[value] = 0;
+        arr1[value] = 0;
+      } else if (arr2[value] === 1 && arr1[value] === 0) {
+        arr2[value] = 0;
+        arr3[value] = 0;
+      } else {
+        arr3[value] = 1;
       }
     }
-    
+
   })
-  console.log(countIn,countOut)
+  console.log(countIn, countOut)
   peoLeft = countIn - countOut;
   console.log(peoLeft)
 }
@@ -175,7 +175,7 @@ function mqtt_messsageReceiv(topic, message, packet) {
 
 
 io.on('connection', socket => {
-  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY ,a4: countIn, a5: peoLeft});
+  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY, a4: countIn, a5: peoLeft });
   // console.log('io'+ myId);
   // console.log('io' + myX);
   // console.log('io' + myY);
