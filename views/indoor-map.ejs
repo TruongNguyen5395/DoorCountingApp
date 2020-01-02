@@ -941,28 +941,18 @@
           <h2>Charts</h2>
         </div>
         <div class="row">
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <div class="card">
               <div class="stat-widget-one">
                 <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
                 <div class="stat-content dib">
-                  <div class="stat-text", style="font-size: 25px">Number of customer entered:</div>
+                  <div class="stat-text" , style="font-size: 25px">Number of customer entered:</div>
                   <div id="countInID" class="stat-digit">0</div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-              <div class="card">
-                  <div class="stat-widget-one">
-                      <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
-                      <div class="stat-content dib">
-                          <div class="stat-text", style="font-size: 25px">Number of customer still inside:</div>
-                          <div id="countLeft" class="stat-digit">0</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          </div> -->
+
         </div>
         <section id="main-content">
           <div class="row">
@@ -977,70 +967,50 @@
 
             <!-- --------------------------------------------------- -->
 
-            <div class="col-md-6 agile-grid-right">
+            <div class="col-md-4 agile-grid-right">
+              <div class="card">
+                <div class="stat-widget-one">
+                  <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
+                  <div class="stat-content dib">
+                    <div class="stat-text" , style="font-size: 25px">Number of customer still inside:</div>
+                    <div id="countLeft" class="stat-digit">0</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="stat-widget-one">
+                  <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
+                  <div class="stat-content dib">
+                    <div class="stat-text" , style="font-size: 25px">Number of customer going IN:</div>
+                    <div id="countInID" class="stat-digit">0</div>
+                  </div>
+                </div>
+              </div>
 
               <div class="card">
-                <h3>Time Events</h3>
-                <div id="graph10"></div>
-                <script>
-                  var week_data = [
-                    { "period": "2011 W27", "licensed": 3407, "sorned": 660 },
-                    { "period": "2011 W26", "licensed": 3351, "sorned": 629 },
-                    { "period": "2011 W25", "licensed": 3269, "sorned": 618 },
-                    { "period": "2011 W24", "licensed": 3246, "sorned": 661 },
-                    { "period": "2011 W23", "licensed": 3257, "sorned": 667 },
-                    { "period": "2011 W22", "licensed": 3248, "sorned": 627 },
-                    { "period": "2011 W21", "licensed": 3171, "sorned": 660 },
-                    { "period": "2011 W20", "licensed": 3171, "sorned": 676 },
-                    { "period": "2011 W19", "licensed": 3201, "sorned": 656 },
-                    { "period": "2011 W18", "licensed": 3215, "sorned": 622 },
-                    { "period": "2011 W17", "licensed": 3148, "sorned": 632 },
-                    { "period": "2011 W16", "licensed": 3155, "sorned": 681 },
-                    { "period": "2011 W15", "licensed": 3190, "sorned": 667 },
-                    { "period": "2011 W14", "licensed": 3226, "sorned": 620 },
-                    { "period": "2011 W13", "licensed": 3245, "sorned": null },
-                    { "period": "2011 W12", "licensed": 3289, "sorned": null },
-                    { "period": "2011 W11", "licensed": 3263, "sorned": null },
-                    { "period": "2011 W10", "licensed": 3189, "sorned": null },
-                    { "period": "2011 W09", "licensed": 3079, "sorned": null },
-                    { "period": "2011 W08", "licensed": 3085, "sorned": null },
-                    { "period": "2011 W07", "licensed": 3055, "sorned": null },
-                    { "period": "2011 W06", "licensed": 3063, "sorned": null },
-                    { "period": "2011 W05", "licensed": 2943, "sorned": null },
-                    { "period": "2011 W04", "licensed": 2806, "sorned": null },
-                    { "period": "2011 W03", "licensed": 2674, "sorned": null },
-                    { "period": "2011 W02", "licensed": 1702, "sorned": null },
-                    { "period": "2011 W01", "licensed": 1732, "sorned": null }
-                  ];
-                  Morris.Line({
-                    element: 'graph10',
-                    data: week_data,
-                    xkey: 'period',
-                    ykeys: ['licensed', 'sorned'],
-                    labels: ['Licensed', 'SORN'],
-                    events: [
-                      '2011-04',
-                      '2011-08'
-                    ]
-                  });
-                </script>
-              </div>
-              <!-- </div> -->
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="footer">
-                <p>2019 © HCMUT Lab - <a href="https://uwb.herokuapp.com">mmWAVE FMCW Radar Technology</a></p>
+                <div class="stat-widget-one">
+                  <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
+                  <div class="stat-content dib">
+                    <div class="stat-text" , style="font-size: 25px">Number of customer going OUT:</div>
+                    <div id="countOutID" class="stat-digit">0</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-        <!-- </div> -->
       </div>
-      <script src="socket.io/socket.io.js"></script>
-      <!-- <script>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer">
+            <p>2019 © HCMUT Lab - <a href="https://uwb.herokuapp.com">mmWAVE FMCW Radar Technology</a></p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- </div> -->
+  </div>
+  <script src="socket.io/socket.io.js"></script>
+  <!-- <script>
         /*$(document).ready(function(){
           $("#popup").hide();
           $('#myPopup').click(function() {
@@ -1201,7 +1171,7 @@
 
 
       </script> -->
-      <!-- <script>
+  <!-- <script>
 
         var a = new Image();
         var canvas = document.getElementById("myCanvas");
@@ -1256,106 +1226,107 @@
       </script> -->
 
 
-      <script type="text/javascript">
+  <script type="text/javascript">
 
-        let a4 = 0;
-        setInterval(function () {
-          const socket = io('https://doorcountapp.herokuapp.com/');
+    let a4 = 0;
+    setInterval(function () {
+      const socket = io('https://doorcountapp.herokuapp.com/');
 
-          var xfield = 6;
-          var yfield = 6;
-          var xpixel = 750;
-          var ypixel = 425;
-          var offset = 375;
+      var xfield = 6;
+      var yfield = 6;
+      var xpixel = 750;
+      var ypixel = 425;
+      var offset = 375;
 
-          socket.on('data-sent', (data) => {
-            if(data.a4 !==a4){
-              document.getElementById('countInID').innerHTML = data.a4;
-              document.getElementById('countLeft').innerHTML = data.a5;
-            }
-
-            let A1 = data.a1;
-            let A2 = data.a2;
-            let A3 = data.a3;
-
-            let tid = A1;
-            let xPosition = A2;
-            let yPosition = A3;
-
-            console.log(xPosition + '  ' + yPosition);
-
-            var canvas = document.getElementById("myCanvas");
-            var ctx = canvas.getContext("2d");
-            var image = new Image();
-
-            function init() {
-              image.src = "/img/truongthesis.png";
-              window.requestAnimationFrame(draw);
-            }
-
-            function drawBall(tag_xcale, tag_ycale) {
-              xLocation = (tag_xcale / xfield) * xpixel + offset;
-              yLocation = (tag_ycale / yfield) * ypixel;
-              ctx.beginPath();
-              ctx.arc(xLocation, yLocation, 10, 0, 2 * Math.PI);
-              ctx.fillStyle = "#2775f2";
-              ctx.fill();
-              ctx.closePath();
-
-            }
-            
-            function draw() {
-
-              ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-              for (count = 0; count < tid.length; count++) {
-                drawBall(xPosition[count], yPosition[count]);
-
-
-              }
-              window.requestAnimationFrame(draw);
-
-            }
-            init();
-
-          });
-
-        }, 100);
-
-
-      </script>
-
-
-      <script>
-        var inputs = document.querySelectorAll('.file-input')
-
-        for (var i = 0, len = inputs.length; i < len; i++) {
-          customInput(inputs[i])
+      socket.on('data-sent', (data) => {
+        if (data.a4 !== a4) {
+          document.getElementById('countInID').innerHTML = data.a4;
+          document.getElementById('countLeft').innerHTML = data.a5;
+          document.getElementById('countOutID').innerHTML = data.a6;
         }
 
-        function customInput(el) {
-          const fileInput = el.querySelector('[type="file"]')
-          const label = el.querySelector('[data-js-label]')
+        let A1 = data.a1;
+        let A2 = data.a2;
+        let A3 = data.a3;
 
-          fileInput.onchange =
-            fileInput.onmouseout = function () {
-              if (!fileInput.value) return
+        let tid = A1;
+        let xPosition = A2;
+        let yPosition = A3;
 
-              var value = fileInput.value.replace(/^.*[\\\/]/, '')
-              el.className += ' -chosen'
-              label.innerText = value
-            }
+        console.log(xPosition + '  ' + yPosition);
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var image = new Image();
+
+        function init() {
+          image.src = "/img/truongthesis.png";
+          window.requestAnimationFrame(draw);
         }
-      </script>
 
-      <script src="assets/js/lib/jquery.min.js"></script>
-      <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
-      <script src="assets/js/lib/menubar/sidebar.js"></script>
-      <script src="assets/js/lib/preloader/pace.min.js"></script>
-      <script src="assets/js/lib/bootstrap.min.js"></script>
-      <script src="assets/js/lib/bootstrap.min.js.map"></script>
-      <script src="/settings/js/bootstrap.js"></script>
-      <script src="/settings/js/proton.js"></script>
+        function drawBall(tag_xcale, tag_ycale) {
+          xLocation = (tag_xcale / xfield) * xpixel + offset;
+          yLocation = (tag_ycale / yfield) * ypixel;
+          ctx.beginPath();
+          ctx.arc(xLocation, yLocation, 10, 0, 2 * Math.PI);
+          ctx.fillStyle = "#2775f2";
+          ctx.fill();
+          ctx.closePath();
+
+        }
+
+        function draw() {
+
+          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+          for (count = 0; count < tid.length; count++) {
+            drawBall(xPosition[count], yPosition[count]);
+
+
+          }
+          window.requestAnimationFrame(draw);
+
+        }
+        init();
+
+      });
+
+    }, 100);
+
+
+  </script>
+
+
+  <script>
+    var inputs = document.querySelectorAll('.file-input')
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+      customInput(inputs[i])
+    }
+
+    function customInput(el) {
+      const fileInput = el.querySelector('[type="file"]')
+      const label = el.querySelector('[data-js-label]')
+
+      fileInput.onchange =
+        fileInput.onmouseout = function () {
+          if (!fileInput.value) return
+
+          var value = fileInput.value.replace(/^.*[\\\/]/, '')
+          el.className += ' -chosen'
+          label.innerText = value
+        }
+    }
+  </script>
+
+  <script src="assets/js/lib/jquery.min.js"></script>
+  <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+  <script src="assets/js/lib/menubar/sidebar.js"></script>
+  <script src="assets/js/lib/preloader/pace.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js.map"></script>
+  <script src="/settings/js/bootstrap.js"></script>
+  <script src="/settings/js/proton.js"></script>
 
 </body>
 

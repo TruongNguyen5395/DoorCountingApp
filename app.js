@@ -139,9 +139,9 @@ function mqtt_messsageReceiv(topic, message, packet) {
     }
 
   })
-  console.log(countIn, countOut)
+  // console.log(countIn, countOut)
   peoLeft = countIn - countOut;
-  console.log(peoLeft)
+  // console.log(peoLeft)
 }
 
 
@@ -175,7 +175,7 @@ function mqtt_messsageReceiv(topic, message, packet) {
 
 
 io.on('connection', socket => {
-  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY, a4: countIn, a5: peoLeft });
+  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY, a4: countIn, a5: peoLeft, a6: countOut });
   // console.log('io'+ myId);
   // console.log('io' + myX);
   // console.log('io' + myY);
