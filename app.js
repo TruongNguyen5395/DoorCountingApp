@@ -140,9 +140,9 @@ function mqtt_messsageReceiv(topic, message, packet) {
 
   })
   // console.log(countIn, countOut)
-  if (countIn >= countOut) {
+  // if (countIn >= countOut) {
     peoLeft = countIn - countOut;
-  }
+  // }
   // console.log(peoLeft)
 }
 
