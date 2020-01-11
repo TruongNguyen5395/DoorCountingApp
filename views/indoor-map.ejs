@@ -968,7 +968,7 @@
             <!-- --------------------------------------------------- -->
 
             <div class="col-md-4 agile-grid-right">
-              <div class="card">
+              <!-- <div class="card">
                 <div class="stat-widget-one">
                   <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
                   <div class="stat-content dib">
@@ -976,7 +976,7 @@
                     <div id="countLeft" class="stat-digit">0</div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="card">
                 <div class="stat-widget-one">
                   <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
@@ -1241,7 +1241,7 @@
       socket.on('data-sent', (data) => {
         if (data.a4 !== a4) {
           document.getElementById('countInID').innerHTML = data.a4;
-          document.getElementById('countLeft').innerHTML = data.a5;
+          // document.getElementById('countLeft').innerHTML = data.a5;
           document.getElementById('countOutID').innerHTML = data.a6;
         }
 
@@ -1254,7 +1254,9 @@
         let yPosition = A3;
 
         console.log(xPosition + '  ' + yPosition);
-        console.log("count in: " +  data.a4 + " "  + "count out: " + data.a6 + " " + "left: " + data.a5);
+        // console.log("count in: " +  data.a4 + " "  + "count out: " + data.a6 + " " + "left: " + data.a5);
+        
+        
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var image = new Image();
